@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "trial of you",
+    "menuBackground": "menuBg",
+    "menuMusic": null,
+    "about": "hi thanks for playing"
+  },
+  "playerData": {
+    "name": "player",
+    "map": 0,
+    "posX": 0,
+    "posY": 0,
+    "sprite": "pc"
+  },
+  "variables": [{ "name": "introPlayed", "value": false }],
+  "maps": [
+    {
+      "name": "map1",
+      "walkableTiles": [0],
+      "tiles": [
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      "events": [
+        {
+          "name": "intro",
+          "posX": 1,
+          "posY": 0,
+          "sprite": "",
+          "condition": "variableValueIs",
+          "conditionArgs": ["introPlayed", false],
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["introPlayed", true]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [[{ "text": "woop" }]]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
