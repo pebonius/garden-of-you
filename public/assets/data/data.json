@@ -15,7 +15,8 @@
   "variables": [
     { "name": "villageIntroPlayed", "value": false },
     { "name": "nonLinearPlayed", "value": false },
-    { "name": "bramblesActive", "value": true }
+    { "name": "bramblesActive", "value": true },
+    { "name": "cropsTrampled", "value": false }
   ],
   "maps": [
     {
@@ -97,8 +98,8 @@
         [2, 83, 1, 1, 1, 1, 1, 1, 83, 2],
         [2, 83, 1, 8, 1, 1, 8, 1, 83, 2],
         [2, 83, 1, 1, 1, 1, 1, 1, 83, 2],
-        [2, 83, 1, 1, 1, 1, 8, 1, 83, 2],
-        [2, 83, 67, 68, 69, 1, 1, 1, 83, 2],
+        [2, 83, 67, 68, 69, 1, 8, 1, 83, 2],
+        [2, 83, 70, 71, 72, 1, 1, 1, 83, 2],
         [2, 83, 73, 74, 75, 1, 1, 1, 83, 2],
         [2, 86, 81, 81, 81, 87, 1, 84, 85, 2],
         [2, 2, 2, 2, 2, 2, 1, 2, 2, 2]
@@ -126,6 +127,26 @@
                   { "text": "i don't remember much" },
                   { "text": "maybe i just talk to the locals, see whats up" }
                 ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "trampleCrops",
+          "posX": 3,
+          "posY": 6,
+          "sprite": "",
+          "condition": "variableValueIs",
+          "conditionArgs": ["cropsTrampled", false],
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["cropsTrampled", true]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [{ "text": "maybe i should stop trampling peoples crops" }]
               ]
             }
           ]
