@@ -1,2 +1,9 @@
-game boilerplate by peb:
+game by peb:
 https://pebonius.itch.io/
+
+open RPG tileset by finalbossblues
+https://finalbossblues.itch.io/openrtp-tiles
+
+overworld grass biome by Beast Pixels
+https://beast-pixels.itch.io/overworld-tileset-grass-biome
+
