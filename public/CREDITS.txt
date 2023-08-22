@@ -1,6 +1,9 @@
 game by peb:
 https://pebonius.itch.io/
 
+player character sprites by ansimuz:
+https://opengameart.org/content/legend-of-faune
+
 open RPG tileset by finalbossblues
 https://finalbossblues.itch.io/openrtp-tiles
 

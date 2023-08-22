@@ -16,34 +16,70 @@
     { "name": "villageIntroPlayed", "value": false },
     { "name": "nonLinearPlayed", "value": false },
     { "name": "bramblesActive", "value": true },
-    { "name": "cropsTrampled", "value": false }
+    { "name": "cropsTrampled", "value": false },
+    { "name": "villageBitActive", "value": false },
+    { "name": "towerEntranceActive", "value": false },
+    { "name": "notBotherActive", "value": true }
   ],
   "maps": [
     {
       "name": "map1",
-      "walkableTiles": [1],
+      "walkableTiles": [1, 1],
       "tiles": [
         [23, 29, 23, 23, 24, 1, 25, 26, 26, 23],
         [24, 30, 22, 23, 24, 1, 18, 62, 63, 25],
-        [24, 1, 22, 23, 24, 1, 1, 64, 65, 42],
-        [27, 1, 25, 26, 27, 1, 42, 54, 54, 54],
+        [24, 1, 25, 23, 24, 1, 1, 64, 65, 42],
+        [27, 1, 1, 22, 27, 1, 42, 54, 54, 54],
         [33, 1, 31, 35, 33, 1, 43, 54, 54, 54],
         [36, 1, 34, 35, 36, 1, 1, 1, 1, 34],
         [36, 1, 37, 38, 39, 1, 31, 33, 1, 34],
         [36, 1, 1, 1, 1, 1, 34, 36, 1, 34],
-        [36, 4, 31, 32, 32, 32, 35, 36, 1, 34],
+        [36, 1, 31, 32, 32, 32, 35, 36, 1, 34],
         [35, 32, 35, 35, 35, 35, 35, 36, 1, 34]
       ],
       "events": [
         {
-          "name": "village",
+          "name": "notBother",
           "posX": 1,
-          "posY": 5,
+          "posY": 2,
+          "sprite": "",
+          "condition": "variableValueIs",
+          "conditionArgs": ["notBotherActive", true],
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "i think i shouldnt bother the old man right now" },
+                  { "text": "he wanted some alone time" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "towerEntrance",
+          "posX": 2,
+          "posY": 3,
+          "sprite": "30",
+          "condition": "variableValueIs",
+          "conditionArgs": ["towerEntranceActive", false],
+          "actions": [
+            {
+              "name": "movePlayer",
+              "arguments": [0, 0, 0]
+            }
+          ]
+        },
+        {
+          "name": "village",
+          "posX": 2,
+          "posY": 3,
           "sprite": "3",
           "actions": [
             {
               "name": "movePlayer",
-              "arguments": [3, 0, 1]
+              "arguments": [0, 4, 1]
             }
           ]
         },
@@ -60,7 +96,7 @@
               "arguments": [
                 [
                   { "text": "here grow wilde brambles" },
-                  { "text": "i cannnot pass" },
+                  { "text": "i cannot pass" },
                   { "text": "so much for non-linear gameplay i guess" }
                 ]
               ]
@@ -80,8 +116,49 @@
               "arguments": [
                 [
                   { "text": "here grow wilde brambles" },
-                  { "text": "i cannnot pass" },
+                  { "text": "i cannot pass" },
                   { "text": "so much for non-linear gameplay i guess" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "villageBitScuffed",
+          "posX": 1,
+          "posY": 5,
+          "sprite": "",
+          "condition": "variableValueIs",
+          "conditionArgs": ["villageBitActive", true],
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["villageBitActive", false]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "ok that village bit was kinda scuffed" },
+                  { "text": "let's see what happens from here on out" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "holeWithWater",
+          "posX": 1,
+          "posY": 8,
+          "sprite": "4",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "what's this" },
+                  { "text": "a hole filled with water?" },
+                  { "text": "interesting" }
                 ]
               ]
             }
@@ -93,22 +170,22 @@
       "name": "village",
       "walkableTiles": [1, 67, 68, 69, 70, 71, 72, 73, 74, 75, 102],
       "tiles": [
-        [2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-        [2, 80, 87, 1, 84, 81, 81, 81, 82, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        [2, 80, 81, 81, 81, 81, 81, 81, 82, 2],
         [2, 83, 1, 1, 1, 94, 95, 96, 83, 2],
         [2, 83, 1, 8, 1, 97, 103, 98, 83, 2],
-        [2, 83, 1, 1, 1, 99, 102, 101, 83, 2],
-        [2, 83, 67, 68, 69, 1, 1, 1, 83, 2],
-        [2, 83, 70, 71, 72, 1, 8, 1, 83, 2],
-        [2, 83, 73, 74, 75, 1, 1, 1, 83, 2],
-        [2, 86, 81, 81, 81, 87, 1, 84, 85, 2],
-        [2, 2, 2, 2, 2, 2, 1, 2, 2, 2]
+        [1, 1, 1, 1, 1, 99, 102, 101, 83, 2],
+        [2, 83, 67, 69, 1, 1, 1, 1, 83, 2],
+        [2, 83, 70, 72, 1, 1, 8, 1, 83, 2],
+        [2, 83, 73, 75, 1, 1, 1, 1, 83, 2],
+        [2, 86, 81, 81, 81, 81, 81, 81, 85, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
       ],
       "events": [
         {
           "name": "villageIntro",
-          "posX": 3,
-          "posY": 1,
+          "posX": 1,
+          "posY": 4,
           "sprite": "",
           "condition": "variableValueIs",
           "conditionArgs": ["villageIntroPlayed", false],
@@ -116,6 +193,10 @@
             {
               "name": "setVariableValue",
               "arguments": ["villageIntroPlayed", true]
+            },
+            {
+              "name": "setVariableValue",
+              "arguments": ["villageBitActive", true]
             },
             {
               "name": "playDialogue",
@@ -133,7 +214,7 @@
         },
         {
           "name": "trampleCrops",
-          "posX": 3,
+          "posX": 2,
           "posY": 6,
           "sprite": "",
           "condition": "variableValueIs",
@@ -148,6 +229,18 @@
               "arguments": [
                 [{ "text": "maybe i should stop trampling peoples crops" }]
               ]
+            }
+          ]
+        },
+        {
+          "name": "villageExit1",
+          "posX": 0,
+          "posY": 4,
+          "sprite": "",
+          "actions": [
+            {
+              "name": "movePlayer",
+              "arguments": [1, 3, 0]
             }
           ]
         }
