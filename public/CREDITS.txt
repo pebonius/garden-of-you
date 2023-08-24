@@ -12,3 +12,7 @@ https://beast-pixels.itch.io/overworld-tileset-grass-biome
 music tracks:
 - grasslands by SubspaceAudio https://opengameart.org/content/jrpg-pack-1-exploration
 - town theme by cynicmusic https://opengameart.org/content/town-theme-rpg
+- a new town by cynicmusic https://opengameart.org/content/a-new-town-rpg-theme
+
+images:
+- wizard tower by JAP https://opengameart.org/content/oil-painting-landscapes
