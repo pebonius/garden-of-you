@@ -10,7 +10,7 @@
     "map": 0,
     "posX": 1,
     "posY": 2,
-    "sprite": "105"
+    "sprite": "109"
   },
   "variables": [
     { "name": "villageIntroPlayed", "value": false },
@@ -79,6 +79,33 @@
               "arguments": [0, 4, 1]
             },
             { "name": "playMusic", "arguments": ["townTheme", true] }
+          ]
+        },
+        {
+          "name": "cabbageMan",
+          "posX": 6,
+          "posY": 2,
+          "sprite": "107",
+          "condition": "variableValueIs",
+          "conditionArgs": ["cropsTrampled", false],
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "man: <<wait, YOU want to go into town?>>" },
+                  { "text": "uhh, yeah?" },
+                  { "text": "man: <<pff i think i doubt it>>" },
+                  { "text": "man: <<a weakling like you is no good>>" },
+                  {
+                    "text": "man: <<have you ever ran across a cabbage field>>"
+                  },
+                  { "text": "man: <<i bet not>>" },
+                  { "text": "no i haven't in actuality" },
+                  { "text": "man: <<bah!>>" }
+                ]
+              ]
+            }
           ]
         },
         {

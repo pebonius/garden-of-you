@@ -8,6 +8,8 @@ https://ansimuz.itch.io/tiny-rpg-town
 https://finalbossblues.itch.io/openrtp-tiles
 - overworld grass biome by Beast Pixels
 https://beast-pixels.itch.io/overworld-tileset-grass-biome
+- character pack (free version) by Gif (twitter: @gif_not_jif), Noiracide (twitter: @Noiracide), Romi (twitter: @DessRomaric)
+https://gif-superretroworld.itch.io/character-pack
 
 music tracks:
 - grasslands by SubspaceAudio https://opengameart.org/content/jrpg-pack-1-exploration
