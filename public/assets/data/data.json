@@ -2,7 +2,7 @@
   "meta": {
     "title": "trial of you",
     "menuBackground": "menuBg",
-    "menuMusic": null,
+    "menuMusic": "townTheme",
     "about": "hi thanks for playing"
   },
   "playerData": {
@@ -10,7 +10,7 @@
     "map": 0,
     "posX": 1,
     "posY": 2,
-    "sprite": "pc"
+    "sprite": "105"
   },
   "variables": [
     { "name": "villageIntroPlayed", "value": false },
@@ -18,7 +18,6 @@
     { "name": "bramblesActive", "value": true },
     { "name": "cropsTrampled", "value": false },
     { "name": "villageBitActive", "value": false },
-    { "name": "towerEntranceActive", "value": false },
     { "name": "notBotherActive", "value": true }
   ],
   "maps": [
@@ -27,7 +26,7 @@
       "walkableTiles": [1, 1],
       "tiles": [
         [23, 29, 23, 23, 24, 1, 25, 26, 26, 23],
-        [24, 30, 22, 23, 24, 1, 18, 62, 63, 25],
+        [24, 1, 22, 23, 24, 1, 18, 62, 63, 25],
         [24, 1, 25, 23, 24, 1, 1, 64, 65, 42],
         [27, 1, 1, 22, 27, 1, 42, 54, 54, 54],
         [33, 1, 31, 35, 33, 1, 43, 54, 54, 54],
@@ -59,11 +58,9 @@
         },
         {
           "name": "towerEntrance",
-          "posX": 2,
-          "posY": 3,
+          "posX": 1,
+          "posY": 1,
           "sprite": "30",
-          "condition": "variableValueIs",
-          "conditionArgs": ["towerEntranceActive", false],
           "actions": [
             {
               "name": "movePlayer",
@@ -80,7 +77,8 @@
             {
               "name": "movePlayer",
               "arguments": [0, 4, 1]
-            }
+            },
+            { "name": "playMusic", "arguments": ["townTheme", true] }
           ]
         },
         {
@@ -241,7 +239,8 @@
             {
               "name": "movePlayer",
               "arguments": [1, 3, 0]
-            }
+            },
+            { "name": "playMusic", "arguments": ["grasslands", true] }
           ]
         }
       ]

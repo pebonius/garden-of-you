@@ -64,7 +64,7 @@ export default class ContentManager {
   }
   loadSounds() {}
   loadMusic() {
-    const tracks = [];
+    const tracks = ["grasslands", "townTheme"];
 
     tracks.forEach((element) => {
       this.loadAudio((audio) => {
@@ -73,7 +73,7 @@ export default class ContentManager {
     });
   }
   loadImages() {
-    const images = ["pc", "menuBg"];
+    const images = ["menuBg"];
 
     images.forEach((element) => {
       this.loadImage((image) => {
@@ -81,7 +81,7 @@ export default class ContentManager {
       }, `./assets/images/${element}.png`);
     });
 
-    const tileCount = 103;
+    const tileCount = 107;
 
     for (let i = 0; i <= tileCount; i++) {
       const url = `./assets/images/tiles/${i}.png`;
