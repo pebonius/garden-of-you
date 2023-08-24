@@ -10,11 +10,15 @@ import {
   removeFromArray,
 } from "../utilities/utilities.js";
 import MapEvent from "./mapEvent.js";
+import { isConditionFulfilled } from "./actions.js";
 
 export default class Tilemap {
   constructor(gameScreen, data) {
     this.gameScreen = gameScreen;
-    this.tileSize = new Point(this.gameScreen.canvas.width / 10, this.gameScreen.canvas.height / 10);
+    this.tileSize = new Point(
+      this.gameScreen.canvas.width / 10,
+      this.gameScreen.canvas.height / 10
+    );
     this.load(data);
   }
   toString() {
@@ -85,6 +89,16 @@ export default class Tilemap {
     const entity = this.getEntity(pos);
 
     if (!isDefined(entity) || !isDefined(entity.sprite)) {
+      return;
+    }
+
+    if (
+      !isConditionFulfilled(
+        entity.condition,
+        entity.conditionArgs,
+        this.gameScreen
+      )
+    ) {
       return;
     }
 
