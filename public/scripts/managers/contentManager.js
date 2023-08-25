@@ -81,7 +81,7 @@ export default class ContentManager {
       }, `./assets/images/${element}.png`);
     });
 
-    const tileCount = 110;
+    const tileCount = 158;
 
     for (let i = 0; i <= tileCount; i++) {
       const url = `./assets/images/tiles/${i}.png`;

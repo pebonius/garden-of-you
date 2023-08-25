@@ -7,12 +7,13 @@
   },
   "playerData": {
     "name": "player",
-    "map": 0,
-    "posX": 1,
+    "map": 3,
+    "posX": 7,
     "posY": 2,
     "sprite": "109"
   },
   "variables": [
+    { "name": "towerIntroPlayed", "value": false },
     { "name": "villageIntroPlayed", "value": false },
     { "name": "nonLinearPlayed", "value": false },
     { "name": "bramblesActive", "value": true },
@@ -337,20 +338,48 @@
     },
     {
       "name": "tower",
-      "walkableTiles": [1],
+      "walkableTiles": [117, 122, 131],
       "tiles": [
-        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-        [2, 2, 2, 2, 1, 2, 2, 2, 2, 2]
+        [118, 119, 119, 119, 119, 118, 119, 119, 119, 120],
+        [121, 129, 129, 129, 129, 121, 129, 129, 129, 123],
+        [121, 117, 117, 117, 117, 121, 122, 122, 122, 123],
+        [121, 117, 117, 117, 117, 121, 122, 122, 122, 123],
+        [121, 117, 117, 117, 117, 125, 126, 122, 126, 123],
+        [121, 117, 117, 117, 117, 129, 129, 131, 129, 123],
+        [121, 117, 117, 117, 117, 117, 117, 117, 117, 123],
+        [121, 117, 117, 117, 117, 117, 117, 117, 117, 123],
+        [121, 117, 117, 117, 117, 117, 117, 117, 117, 123],
+        [125, 126, 126, 126, 117, 126, 126, 126, 126, 127]
       ],
       "events": [
+        {
+          "name": "towerIntro",
+          "posX": 7,
+          "posY": 4,
+          "sprite": "",
+          "condition": "variableValueIs",
+          "conditionArgs": ["towerIntroPlayed", false],
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["towerIntroPlayed", true]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "so" },
+                  { "text": "today is the day" },
+                  { "text": "finally ill undergo the trial" },
+                  { "text": "i wonder what the master has in store for me" },
+                  {
+                    "text": "i better go downstairs and not make old man wait"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
         {
           "name": "towerExit",
           "posX": 4,
@@ -362,6 +391,47 @@
               "arguments": [1, 2, 0]
             },
             { "name": "playMusic", "arguments": ["grasslands", true] }
+          ]
+        },
+        {
+          "name": "crate",
+          "posX": 6,
+          "posY": 2,
+          "sprite": "134",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "theres no inventory in this game" },
+                  { "text": "so no point looking at crates" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bed1",
+          "posX": 8,
+          "posY": 2,
+          "sprite": "115",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [[{ "text": "ah, the love of my life - bed" }]]
+            }
+          ]
+        },
+        {
+          "name": "bed2",
+          "posX": 8,
+          "posY": 3,
+          "sprite": "116",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [[{ "text": "ah, the love of my life - bed" }]]
+            }
           ]
         }
       ]
