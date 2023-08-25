@@ -14,6 +14,7 @@
   },
   "variables": [
     { "name": "towerIntroPlayed", "value": false },
+    { "name": "trialLearned", "value": false },
     { "name": "villageIntroPlayed", "value": false },
     { "name": "nonLinearPlayed", "value": false },
     { "name": "bramblesActive", "value": true },
@@ -348,8 +349,8 @@
         [121, 117, 117, 117, 117, 129, 129, 131, 129, 123],
         [121, 117, 117, 117, 117, 117, 117, 117, 117, 123],
         [121, 117, 117, 117, 117, 117, 117, 117, 117, 123],
-        [121, 117, 117, 117, 117, 117, 117, 117, 117, 123],
-        [125, 126, 126, 126, 117, 126, 126, 126, 126, 127]
+        [121, 117, 117, 121, 117, 123, 117, 117, 117, 123],
+        [125, 126, 126, 127, 117, 125, 126, 126, 126, 127]
       ],
       "events": [
         {
@@ -375,6 +376,25 @@
                   {
                     "text": "i better go downstairs and not make old man wait"
                   }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "cannotGo",
+          "posX": 4,
+          "posY": 8,
+          "sprite": "",
+          "condition": "variableValueIs",
+          "conditionArgs": ["trialLearned", false],
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "i cant go yet" },
+                  { "text": "i havent learned what my trial is" }
                 ]
               ]
             }
@@ -431,6 +451,72 @@
             {
               "name": "playDialogue",
               "arguments": [[{ "text": "ah, the love of my life - bed" }]]
+            }
+          ]
+        },
+        {
+          "name": "crystalBall",
+          "posX": 2,
+          "posY": 3,
+          "sprite": "145",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "only master can read the crystal ball" },
+                  { "text": "i only see fog inside" },
+                  { "text": "or maybe that means therell be fog tomorrow?" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "master",
+          "posX": 3,
+          "posY": 3,
+          "sprite": "110",
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["trialLearned", true]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "master" },
+                  { "text": "master: <<hello young one>>" },
+                  { "text": "i am ready" },
+                  { "text": "what trial have you in store for me" },
+                  { "text": "master: <<you are eager to start>>" },
+                  { "text": "master: <<good>>" },
+                  { "text": "master: <<your trial is thus>>" },
+                  { "text": "master: <<go out of this tower>>" },
+                  { "text": "master: <<seek out your own future>>" },
+                  { "text": "master: <<live you life how you see fit>>" },
+                  { "text": "master: <<be a person>>" },
+                  { "text": "..." },
+                  { "text": "that's it?" },
+                  { "text": "doesnt sound that hard tbh" },
+                  { "text": "master: <<you'd fucking be surprised>>" },
+                  { "text": "ok master how long shall the trial last?" },
+                  { "text": "master: <<the rest of your life im afraid>>" },
+                  { "text": "i see" },
+                  { "text": "soo i just go out and do my stuff" },
+                  { "text": "master: <<that's the trial>>" },
+                  { "text": "so basically you're kicking me out" },
+                  { "text": "master: <<listen>>" },
+                  { "text": "master: <<i'm like 999 years old>>" },
+                  { "text": "master: <<i got no friends, no family>>" },
+                  { "text": "master: <<i got nothing more to teach you>>" },
+                  { "text": "master: <<maybe i never did>>" },
+                  { "text": "master: <<go and do your thing ok?>>" },
+                  { "text": "master: <<just... just let me be>>" },
+                  { "text": "uhh ok?" }
+                ]
+              ]
             }
           ]
         }
