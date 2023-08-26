@@ -180,7 +180,7 @@
               "name": "playDialogue",
               "arguments": [
                 [
-                  { "text": "ok that village bit was kinda scuffed" },
+                  { "text": "ok that village was kinda scuffed" },
                   { "text": "let's see what happens from here on out" }
                 ]
               ]
@@ -214,10 +214,10 @@
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         [2, 80, 81, 81, 81, 81, 81, 81, 82, 2],
         [2, 83, 1, 1, 1, 94, 95, 96, 83, 2],
-        [2, 83, 1, 8, 1, 97, 103, 98, 83, 2],
+        [2, 83, 1, 1, 1, 97, 1, 98, 83, 2],
         [1, 1, 1, 1, 1, 99, 102, 101, 83, 2],
         [2, 83, 67, 69, 1, 1, 1, 1, 83, 2],
-        [2, 83, 70, 72, 1, 1, 8, 1, 83, 2],
+        [2, 83, 70, 72, 1, 1, 1, 1, 83, 2],
         [2, 83, 73, 75, 1, 1, 1, 1, 83, 2],
         [2, 86, 81, 81, 81, 81, 81, 81, 85, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
@@ -248,6 +248,104 @@
                   { "text": "was it here when i went to master's tower?" },
                   { "text": "i don't remember much" },
                   { "text": "maybe i just talk to the locals, see whats up" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "house1",
+          "posX": 6,
+          "posY": 6,
+          "sprite": "8",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "the door is locked" },
+                  { "text": "im not in the mood for breaking and entering" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "house2",
+          "posX": 3,
+          "posY": 3,
+          "sprite": "8",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "*knock knock* anyone home?" },
+                  { "text": "guess not" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "house3",
+          "posX": 6,
+          "posY": 3,
+          "sprite": "103",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "this house feels special for some reason" },
+                  { "text": "maybe it will be important later in the game" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "villager1",
+          "posX": 2,
+          "posY": 3,
+          "sprite": "105",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "hey" },
+                  { "text": "villager: <<hey>>" },
+                  { "text": "..." },
+                  { "text": "uhh, so what's up with you?" },
+                  { "text": "villager: <<what's up with freaking you>>" },
+                  { "text": "villager: <<i live here>>" },
+                  { "text": "yeah figures" },
+                  { "text": "any rumours lately?" },
+                  { "text": "villager: <<nothing that should concern you>>" },
+                  { "text": "fair enough" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "villager2",
+          "posX": 4,
+          "posY": 6,
+          "sprite": "104",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "so, you're a farmer i guess huh?" },
+                  { "text": "villager: <<yeah>>" },
+                  { "text": "so... what do you farm?" },
+                  { "text": "villager: <<mostly cabbage>>" },
+                  { "text": "ah cool" },
+                  { "text": "villager: <<yeah>>" },
+                  { "text": "k good talk, see you around" }
                 ]
               ]
             }
@@ -372,7 +470,7 @@
                   { "text": "so" },
                   { "text": "today is the day" },
                   { "text": "finally ill undergo the trial" },
-                  { "text": "i wonder what the master has in store for me" },
+                  { "text": "i wonder what master has in store for me" },
                   {
                     "text": "i better go downstairs and not make old man wait"
                   }
@@ -423,7 +521,7 @@
               "name": "playDialogue",
               "arguments": [
                 [
-                  { "text": "theres no inventory in this game" },
+                  { "text": "theres no inventory system in this game" },
                   { "text": "so no point looking at crates" }
                 ]
               ]
@@ -495,7 +593,7 @@
                   { "text": "master: <<your trial is thus>>" },
                   { "text": "master: <<go out of this tower>>" },
                   { "text": "master: <<seek out your own future>>" },
-                  { "text": "master: <<live you life how you see fit>>" },
+                  { "text": "master: <<live your life how you see fit>>" },
                   { "text": "master: <<be a person>>" },
                   { "text": "..." },
                   { "text": "that's it?" },
