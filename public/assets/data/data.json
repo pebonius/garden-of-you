@@ -30,8 +30,8 @@
       "name": "map1",
       "walkableTiles": [1, 1],
       "tiles": [
-        [23, 29, 23, 23, 24, 1, 25, 26, 26, 23],
-        [24, 1, 22, 23, 24, 1, 18, 62, 63, 25],
+        [23, 29, 23, 23, 23, 23, 23, 26, 26, 23],
+        [24, 1, 22, 23, 23, 26, 27, 62, 63, 25],
         [24, 1, 25, 23, 24, 1, 1, 1, 65, 42],
         [27, 1, 1, 22, 27, 1, 42, 54, 54, 54],
         [33, 1, 31, 35, 33, 1, 43, 54, 54, 54],
@@ -127,27 +127,7 @@
           ]
         },
         {
-          "name": "bramble1",
-          "posX": 5,
-          "posY": 1,
-          "sprite": "79",
-          "condition": "variableValueIs",
-          "conditionArgs": ["bramblesActive", true],
-          "actions": [
-            {
-              "name": "playDialogue",
-              "arguments": [
-                [
-                  { "text": "here grow wilde brambles" },
-                  { "text": "i cannot pass" },
-                  { "text": "so much for non-linear gameplay i guess" }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "name": "bramble2",
+          "name": "brambles",
           "posX": 8,
           "posY": 8,
           "sprite": "79",
@@ -158,7 +138,7 @@
               "name": "playDialogue",
               "arguments": [
                 [
-                  { "text": "here grow wilde brambles" },
+                  { "text": "here grow wild brambles" },
                   { "text": "i cannot pass" },
                   { "text": "so much for non-linear gameplay i guess" }
                 ]
