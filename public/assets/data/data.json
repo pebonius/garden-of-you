@@ -21,7 +21,9 @@
     { "name": "cropsTrampled", "value": false },
     { "name": "villageBitActive", "value": false },
     { "name": "notBotherActive", "value": true },
-    { "name": "townIntroPlayed", "value": false }
+    { "name": "townIntroPlayed", "value": false },
+    { "name": "sawMastersGrave", "value": false },
+    { "name": "masterDead", "value": false }
   ],
   "maps": [
     {
@@ -297,8 +299,8 @@
               "name": "playDialogue",
               "arguments": [
                 [
-                  { "text": "this house feels special for some reason" },
-                  { "text": "maybe it will be important later in the game" }
+                  { "text": "a big house on the hill" },
+                  { "text": "must be nice to be a property owner" }
                 ]
               ]
             }
@@ -422,6 +424,60 @@
                   {
                     "text": "maybe some plot development can happen here"
                   }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "townsperson",
+          "posX": 3,
+          "posY": 4,
+          "sprite": "106",
+          "condition": "variableValueIs",
+          "conditionArgs": ["sawMastersGrave", false],
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["masterDead", true]
+            },
+            {
+              "name": "setVariableValue",
+              "arguments": ["notBotherActive", false]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "hello, townsperson" },
+                  { "text": "person: <<greetings>>" },
+                  {
+                    "text": "person: <<what brings you to our beautiful town?>>"
+                  },
+                  { "text": "i was sent out on a trial to seek out my future" },
+                  { "text": "person: <<ah i see>>" },
+                  { "text": "person: <<wait, don't tell me>>" },
+                  {
+                    "text": "person: <<are you by chance the wizards disciple?>>"
+                  },
+                  { "text": "ah yeah" },
+                  { "text": "person: <<i see!>>" },
+                  { "text": "person: <<i am awed to hear hes still alive>>" },
+                  { "text": "woah rude" },
+                  { "text": "person: <<ah, sorry! it's just that...>>" },
+                  { "text": "person: <<well... he is older than our town>>" },
+                  { "text": "uhh right" },
+                  { "text": "well if you put it this way" },
+                  { "text": "i never thought that he COULD die" },
+                  { "text": "person: <<wizards can live very long>>" },
+                  { "text": "person: <<some say as long as 1000 years>>" },
+                  { "text": "that's amazing!" },
+                  { "text": "that reminds me" },
+                  { "text": "wasn't today like his birthday or something?" },
+                  {
+                    "text": "person: <<oh! make sure to wish him all the best!>>"
+                  },
+                  { "text": "thanks, I will!" }
                 ]
               ]
             }
@@ -599,6 +655,8 @@
           "posX": 3,
           "posY": 3,
           "sprite": "110",
+          "condition": "variableValueIs",
+          "conditionArgs": ["masterDead", false],
           "actions": [
             {
               "name": "setVariableValue",
