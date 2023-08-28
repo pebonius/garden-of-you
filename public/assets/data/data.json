@@ -70,6 +70,10 @@
             {
               "name": "movePlayer",
               "arguments": [4, 9, 3]
+            },
+            {
+              "name": "playMusic",
+              "arguments": ["calmTheme", true]
             }
           ]
         },
@@ -527,7 +531,13 @@
               "name": "playDialogue",
               "arguments": [
                 [
-                  { "text": "so" },
+                  {
+                    "text": "so",
+                    "action": {
+                      "name": "playMusic",
+                      "arguments": ["calmTheme", true]
+                    }
+                  },
                   { "text": "today is the day" },
                   { "text": "finally ill undergo the trial" },
                   { "text": "i wonder what master has in store for me" },
