@@ -17,13 +17,12 @@
     { "name": "trialLearned", "value": false },
     { "name": "villageIntroPlayed", "value": false },
     { "name": "nonLinearPlayed", "value": false },
-    { "name": "bramblesActive", "value": true },
     { "name": "cropsTrampled", "value": false },
     { "name": "villageBitActive", "value": false },
     { "name": "notBotherActive", "value": true },
     { "name": "townIntroPlayed", "value": false },
-    { "name": "sawMastersGrave", "value": false },
-    { "name": "masterDead", "value": false }
+    { "name": "masterDead", "value": false },
+    { "name": "endingUnlocked", "value": false }
   ],
   "maps": [
     {
@@ -136,7 +135,7 @@
           "posY": 8,
           "sprite": "79",
           "condition": "variableValueIs",
-          "conditionArgs": ["bramblesActive", true],
+          "conditionArgs": ["endingUnlocked", false],
           "actions": [
             {
               "name": "playDialogue",
@@ -148,6 +147,19 @@
                 ]
               ]
             }
+          ]
+        },
+        {
+          "name": "forestEntrance",
+          "posX": 8,
+          "posY": 9,
+          "sprite": "",
+          "actions": [
+            {
+              "name": "movePlayer",
+              "arguments": [8, 0, 4]
+            },
+            { "name": "playMusic", "arguments": ["darkForest", true] }
           ]
         },
         {
@@ -185,7 +197,7 @@
                 [
                   { "text": "what's this" },
                   { "text": "a hole filled with water?" },
-                  { "text": "interesting" }
+                  { "text": "cool" }
                 ]
               ]
             }
@@ -419,7 +431,7 @@
           "posY": 4,
           "sprite": "106",
           "condition": "variableValueIs",
-          "conditionArgs": ["sawMastersGrave", false],
+          "conditionArgs": ["endingUnlocked", false],
           "actions": [
             {
               "name": "setVariableValue",
@@ -641,6 +653,71 @@
           ]
         },
         {
+          "name": "mastersGrave",
+          "posX": 3,
+          "posY": 4,
+          "sprite": "149",
+          "condition": "variableValueIs",
+          "conditionArgs": ["masterDead", true],
+          "actions": [
+            {
+              "name": "setVariableValue",
+              "arguments": ["endingUnlocked", true]
+            },
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "nooooooo" },
+                  { "text": "master... what happened" },
+                  { "text": "wait, i think he did say he was 999 yo" },
+                  { "text": "so it really was his birthday today" },
+                  { "text": "this is so sad" },
+                  { "text": "there is a grave almost right where he stood" },
+                  { "text": "rip" },
+                  { "text": "master: <<young one...>>" },
+                  { "text": "this voice?" },
+                  {
+                    "text": "master: <<i am speaking to you from astral plane>>"
+                  },
+                  {
+                    "text": "master: <<sorry for being kind of a dick earlier>>"
+                  },
+                  {
+                    "text": "master: <<guess i was tilted my life was ending>>"
+                  },
+                  {
+                    "text": "master: <<i do want to give you a proper trial>>"
+                  },
+                  {
+                    "text": "master: <<there is a forest south of here>>"
+                  },
+                  {
+                    "text": "master: <<there you will find a man named yoyo>>"
+                  },
+                  { "text": "master: <<seek him out and tell him thus:>>" },
+                  { "text": "master: <<your trial is over>>" },
+                  { "text": "master: <<that is all>>" },
+                  { "text": "so... i will undergo a proper trial after all" },
+                  {
+                    "text": "master: <<you dont need to if you don't want to>>"
+                  },
+                  { "text": "master: <<i dont care either way, im dead lol>>" },
+                  { "text": "lol" },
+                  {
+                    "text": "master: <<i used all my power to tell you this>>"
+                  },
+                  { "text": "master: <<this concludes my message>>" },
+                  { "text": "master: <<peace out>>" },
+                  { "text": "master..." },
+                  { "text": "i will never forget the lessons you taught me" },
+                  { "text": "wait, what did he teach me again?" }
+                ]
+              ]
+            }
+          ]
+        },
+        {
           "name": "master",
           "posX": 3,
           "posY": 3,
@@ -688,6 +765,73 @@
                 ]
               ]
             }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "forest",
+      "walkableTiles": [1],
+      "tiles": [
+        [2, 2, 2, 2, 2, 2, 2, 2, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 1, 2, 2, 2, 2, 2, 2, 2, 2],
+        [2, 1, 2, 2, 2, 2, 2, 2, 2, 2],
+        [2, 1, 2, 2, 1, 1, 1, 1, 1, 2],
+        [2, 1, 2, 2, 2, 2, 2, 2, 1, 2],
+        [2, 1, 2, 2, 2, 2, 2, 2, 1, 2],
+        [2, 1, 2, 2, 2, 2, 2, 2, 1, 2],
+        [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      ],
+      "events": [
+        {
+          "name": "yoyo",
+          "posX": 4,
+          "posY": 4,
+          "sprite": "108",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [
+                [
+                  { "text": "yo, you yoyo?" },
+                  { "text": "yoyo: <<yep>>" },
+                  { "text": "yoyo: <<wait, how'd you know?>>" },
+                  { "text": "uhh master told me to find you here" },
+                  { "text": "he said to tell you your trial is over" },
+                  { "text": "was his dying wish actually" },
+                  { "text": "yoyo: <<ah, so the old man finally died>>" },
+                  { "text": "yoyo: <<thanks for bringing me his message>>" },
+                  { "text": "yeah no probs" },
+                  { "text": "just out of curiosity" },
+                  { "text": "what was your trial?" },
+                  { "text": "yoyo: <<count every leaf in this forest>>" },
+                  { "text": "i see" },
+                  { "text": "master really was kind of a dick wasnt he" },
+                  { "text": "yoyo: <<yeah hehe>>" },
+                  { "text": "hehe" },
+                  { "text": "[THE END]" },
+                  {
+                    "text": ":)",
+                    "action": { "name": "endGame", "arguments": [] }
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "forestExit",
+          "posX": 8,
+          "posY": 0,
+          "sprite": "",
+          "actions": [
+            {
+              "name": "movePlayer",
+              "arguments": [8, 9, 0]
+            },
+            { "name": "playMusic", "arguments": ["grasslands", true] }
           ]
         }
       ]
